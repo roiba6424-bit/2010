@@ -19,13 +19,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap');
 
-        /* Ghi đè file style.css để dùng ảnh nền đẹp */
         body {
-            background-image: url('https://images.unsplash.com/photo-1518707664871-0d354d763c3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1770&q=80') !important;
+            background-image: url('https://images.unsplash.com/photo-1518707664871-0d354d763c3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%D%D&auto=format&fit=crop&w=1770&q=80') !important;
             background-size: cover !important;
             background-position: center center !important;
             font-family: 'Quicksand', sans-serif !important;
-            /* Thay đổi: Đảm bảo body là flex container để căn giữa */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,7 +33,6 @@
             overflow: hidden;
         }
 
-        /* Vùng chứa các cánh hoa rơi */
         .petals-container {
             position: absolute;
             top: 0;
@@ -65,13 +62,11 @@
             100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
         }
 
-
         .card {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -80,20 +75,16 @@
             text-align: center;
             color: #333;
             max-width: 500px;
-            /* Thay đổi: Đảm bảo card vừa với màn hình điện thoại */
             width: 90vw;
-            box-sizing: border-box; /* Quan trọng */
-            
+            box-sizing: border-box; 
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.3);
             opacity: 1;
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
             pointer-events: auto;
-            /* Thay đổi: Thêm z-index để nổi lên trên #main */
             z-index: 11;
         }
 
-        
         .card.hidden {
             opacity: 0;
             transform: translate(-50%, -50%) scale(0.8);
@@ -118,7 +109,7 @@
         }
 
         #main {
-           opacity: 1 !important
+           opacity: 1 !important;
            width: 100vw;
            height: 100vh;
            display: flex;
@@ -127,13 +118,18 @@
         }
         
         #wrap {
+            width: 1100px;
+            height: 680px;
+            position: relative; 
             margin: 0 !important; 
-            flex-shrink: 0;
+            flex-shrink: 0; 
+
             --scale-w: calc(100vw / 1100);
             --scale-h: calc(100vh / 680);
             --scale: min(var(--scale-w), var(--scale-h), 1);
             
             transform: scale(var(--scale));
+            transform-origin: center center; 
         }
         
         @media (max-width: 600px) {
@@ -152,6 +148,7 @@
 
 <body>
     <div class="petals-container" id="petals-container"></div>
+    
     <div class="card" id="card-20-10">
         <h1>Chúc Mừng 20/10</h1>
         <p>
@@ -227,10 +224,11 @@
                     clickTarget.removeEventListener('click', hideOverlayOnClick, { capture: true });
                 }
             }
-
+            
             clickTarget.addEventListener('click', hideOverlayOnClick, { capture: true, once: true }); 
         });
     </script>
+    
     <script src="./asset/script.js"></script> 
 
 </body>
