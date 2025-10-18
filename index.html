@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    
     <title>Chuc mung ngay 20/10</title>
 
-    <link type="text/css" rel="stylesheet" href="./asset/style.css?v=101">
-    <script type="text/javascript" src="./asset/jquery.min.js?v=101"></script>
-    <script type="text/javascript" src="./asset/jscex.min.js?v=101"></script>
-    <script type="text/javascript" src="./asset/jscex-parser.js?v=101"></script>
-    <script type="text/javascript" src="./asset/jscex-jit.js?v=101"></script>
-    <script type="text/javascript" src="./asset/jscex-builderbase.min.js?v=101"></script>
-    <script type="text/javascript" src="./asset/jscex-async.min.js?v=101"></script>
-    <script type="text/javascript" src="./asset/jscex-async-powerpack.min.js?v=101"></script>
-    <script type="text/javascript" src="./asset/functions.js?v=101" charset="utf-8"></script>
-    <script type="text/javascript" src="./asset/love.js?v=101" charset="utf-8"></script>
+    <link type="text/css" rel="stylesheet" href="./asset/style.css?v=105">
+    <script type="text/javascript" src="./asset/jquery.min.js?v=105"></script>
+    <script type="text/javascript" src="./asset/jscex.min.js?v=105"></script>
+    <script type="text/javascript" src="./asset/jscex-parser.js?v=105"></script>
+    <script type="text/javascript" src="./asset/jscex-jit.js?v=105"></script>
+    <script type="text/javascript" src="./asset/jscex-builderbase.min.js?v=105"></script>
+    <script type="text/javascript" src="./asset/jscex-async.min.js?v=105"></script>
+    <script type="text/javascript" src="./asset/jscex-async-powerpack.min.js?v=105"></script>
+    <script type="text/javascript" src="./asset/functions.js?v=105" charset="utf-8"></script>
+    <script type="text/javascript" src="./asset/love.js?v=105" charset="utf-8"></script>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap');
 
+        /*
+          THAY ĐỔI: Sửa lại body, cho phép cuộn
+        */
         body {
             background-image: url('https://images.unsplash.com/photo-1518707664871-0d354d763c3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%D%D&auto=format&fit=crop&w=1770&q=80') !important;
             background-size: cover !important;
             background-position: center center !important;
             font-family: 'Quicksand', sans-serif !important;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
             margin: 0;
-            overflow: hidden !important; 
+            /* file style.css gốc đã có "overflow: auto" nên sẽ tự có thanh cuộn */
         }
 
         .petals-container {
@@ -108,29 +108,10 @@
             margin-top: 20px;
         }
 
-        #main {
-           opacity: 1 !important;
-           width: 100vw;
-           height: 100vh;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-        }
-        
-        #wrap {
-            width: 1100px !important;
-            height: 680px !important;
-            position: relative !important; 
-            margin: 0 !important; 
-            flex-shrink: 0 !important; 
-
-            --scale-w: calc(100vw / 1100);
-            --scale-h: calc(100vh / 680);
-            --scale: min(var(--scale-w), var(--scale-h), 1);
-            
-            transform: scale(var(--scale)) !important;
-            transform-origin: center center !important; 
-        }
+        /*
+          THAY ĐỔI: Đã xóa các quy tắc #main và #wrap
+          để cho file style.css gốc tự xử lý
+        */
         
         @media (max-width: 600px) {
             .card {
@@ -164,7 +145,7 @@
                 <div id="code">
                     <font color="#000"><span class="say">Mừng ngày 20 tháng 10!</span><br>
                         <span class="say"> </span><br>
-                        <span class="say">Xin gửi lời tri ân và những bó hoa tươi thắm nhất đến tất cả những người bà, người mẹ, người chị, người em - những người phụ nữ tuyệt vời của ViệtNam.</span><br>
+                        <span class="say">Xin gửi lời tri ân và những bó hoa tươi thắm nhất đến tất cả những người bà, người mẹ, người chị, người em - những người phụ nữ tuyệt vời của Việt Nam.</span><br>
                         <span class="say">Chúc chị em phụ nữ một ngày 20/10 thật ý nghĩa, ngập tràn niềm vui và những nụ cười hạnh phúc.</span><br>
                         <span class="say">Mong rằng không chỉ hôm nay, mà 365 ngày trong năm, phái đẹp đều luôn được yêu thương, trân trọng và tỏa sáng theo cách riêng của mình. </span><br>
                         <span class="say">Chúc mừng! From Lam with love </span><br>
@@ -229,7 +210,7 @@
         });
     </script>
     
-    <script src="./asset/script.js?v=101"></script> 
+    <script src="./asset/script.js?v=105"></script> 
 
 </body>
 </html>
