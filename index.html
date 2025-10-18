@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Chuc mung ngay 20/10</title>
+    
+    <link type="text/css" rel="stylesheet" href="./asset/style.css">
+    <script type="text/javascript" src="./asset/jquery.min.js"></script>
+    <script type="text/javascript" src="./asset/jscex.min.js"></script>
+    <script type="text/javascript" src="./asset/jscex-parser.js"></script>
+    <script type="text/javascript" src="./asset/jscex-jit.js"></script>
+    <script type="text/javascript" src="./asset/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./asset/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./asset/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./asset/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./asset/love.js" charset="utf-8"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap');
+
+        /* Ghi đè file style.css để dùng ảnh nền đẹp */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1518707664871-0d354d763c3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1770&q=80') !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            font-family: 'Quicksand', sans-serif !important;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Vùng chứa các cánh hoa rơi */
+        .petals-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Quan trọng: Cho phép click xuyên qua */
+            overflow: hidden;
+            z-index: 10; /* Nằm trên #main ban đầu */
+            transition: opacity 0.5s ease-out;
+        }
+
+        .petal {
+            position: absolute;
+            background: rgba(255, 182, 193, 0.7);
+            border-radius: 50% 0;
+            width: 15px;
+            height: 20px;
+            opacity: 0;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* CĂN GIỮA THIỆP 20/10 */
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px 50px;
+            text-align: center;
+            color: #333;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            opacity: 1;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            pointer-events: none;
+        }
+        
+        .card.hidden {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+        .petals-container.hidden {
+            opacity: 0;
+        }
+
+        .card h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #d81b60;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        .card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #222;
+            margin-top: 20px;
+        }
+        
+        #main {
+           opacity: 1 !important;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="petals-container" id="petals-container"></div>
+    <div class="card" id="card-20-10">
+        <h1>Chúc Mừng 20/10</h1>
+        <p>
+            Nhân ngày Phụ nữ Việt Nam, xin gửi lời chúc tốt đẹp nhất đến một nửa thế giới.
+            Chúc các bà, các mẹ, các chị, các em luôn rạng rỡ, hạnh phúc và thành công trong cuộc sống!
+        </p>
+        </div>
+
+    <div id="main">
+        <div id="wrap">
+            <div id="text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">
+                <div id="code">
+                    <font color="#000"><span class="say">Mừng ngày 20 tháng 10!</span><br>
+                        <span class="say"> </span><br>
+                        <span class="say">Xin gửi lời tri ân và những bó hoa tươi thắm nhất đến tất cả những người bà, người mẹ, người chị, người em - những người phụ nữ tuyệt vời của Việt Nam.</span><br>
+                        <span class="say">Chúc chị em phụ nữ một ngày 20/10 thật ý nghĩa, ngập tràn niềm vui và những nụ cười hạnh phúc.</span><br>
+                        <span class="say">Mong rằng không chỉ hôm nay, mà 365 ngày trong năm, phái đẹp đều luôn được yêu thương, trân trọng và tỏa sáng theo cách riêng của mình. </span><br>
+                        <span class="say">Chúc mừng! From Lam with love </span><br>
+                        <span class="say"><span class="space"><img width="100px" height="100px" src="image/tym.png" alt=""><br> <span class="say"><span class="space">
+                    </font>
+                    </div>
+            </div>
+            <canvas id="canvas" width="1100" height="680"></canvas>
+        </div>
+    </div>
+
+    <audio id="myAudio" autoplay="autoplay" loop>
+        <source src="music/nhac.mp3" type="audio/mp3" /> </audio>
+
+    <script>
+        const petalsContainer = document.getElementById('petals-container');
+        const numberOfPetals = 50;
+        for (let i = 0; i < numberOfPetals; i++) {
+            let petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = `${Math.random() * 100}vw`; 
+            petal.style.animationDelay = `${Math.random() * 10}s`; 
+            petal.style.width = `${Math.random() * 5 + 10}px`; 
+            petal.style.height = `${Math.random() * 8 + 12}px`; 
+            petal.style.animationDuration = `${Math.random() * 5 + 7}s`;
+            petal.style.setProperty('--random-drift', Math.random() * 2 - 1);
+            petalsContainer.appendChild(petal);
+        }
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const card = document.getElementById('card-20-10');
+            const petals = document.getElementById('petals-container');
+            // Phần tử mà love.js lắng nghe sự kiện click để mọc cây
+            // Dùng document để đảm bảo bắt được click xuyên qua overlay
+            const clickTarget = document; 
+
+            // Hàm để ẩn thiệp và lá rơi
+            function hideOverlayOnClick() {
+                // Kiểm tra xem thiệp còn hiển thị không (tránh chạy lại)
+                if (card && !card.classList.contains('hidden')) { 
+                    card.classList.add('hidden');
+                    if (petals) petals.classList.add('hidden');
+                    
+                    // Xóa hẳn sau khi mờ (tùy chọn)
+                    setTimeout(() => {
+                        if (card) card.remove();
+                        if (petals) petals.remove();
+                    }, 500); // Thời gian khớp với transition
+                     // Gỡ bỏ listener này sau khi chạy lần đầu
+                    clickTarget.removeEventListener('click', hideOverlayOnClick, { capture: true }); // Loại bỏ capture khi gỡ
+                }
+            }
+
+            // Lắng nghe sự kiện click đầu tiên trên toàn bộ document
+            // { capture: true, once: true } giúp bắt sự kiện click sớm nhất và chỉ 1 lần
+            clickTarget.addEventListener('click', hideOverlayOnClick, { capture: true, once: true }); 
+            
+            // Nhạc sẽ tự chạy do autoplay trong thẻ audio
+            const audio = document.getElementById('myAudio');
+            // Bạn có thể thêm điều khiển nhạc ở đây nếu muốn
+        });
+    </script>
+
+    <script src="./asset/script.js"></script> 
+
+</body>
+</html>
