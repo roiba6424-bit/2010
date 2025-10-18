@@ -162,8 +162,7 @@
       }
     })
   );
-
-  var runAsync = eval(
+  window.startTreeAnimation = eval(
     Jscex.compile("async", function () {
       $await(seedAnimate());
       $await(growAnimate());
@@ -176,10 +175,5 @@
     })
   );
 
-  runAsync().start();
+  
 })();
-
-document.addEventListener("click", function() {
-    var audio = document.getElementById("myAudio");
-    audio.play();
-});
