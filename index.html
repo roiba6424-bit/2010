@@ -19,16 +19,23 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap');
 
+        /* Ghi đè file style.css để dùng ảnh nền đẹp */
         body {
             background-image: url('https://images.unsplash.com/photo-1518707664871-0d354d763c3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1770&q=80') !important;
             background-size: cover !important;
             background-position: center center !important;
             font-family: 'Quicksand', sans-serif !important;
+            /* Thay đổi: Đảm bảo body là flex container để căn giữa */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
+            width: 100vw;
             margin: 0;
             overflow: hidden;
         }
 
+        /* Vùng chứa các cánh hoa rơi */
         .petals-container {
             position: absolute;
             top: 0;
@@ -73,11 +80,16 @@
             text-align: center;
             color: #333;
             max-width: 500px;
+            /* Thay đổi: Đảm bảo card vừa với màn hình điện thoại */
+            width: 90vw;
+            box-sizing: border-box; /* Quan trọng */
+            
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.3);
             opacity: 1;
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
             pointer-events: auto;
+            /* Thay đổi: Thêm z-index để nổi lên trên #main */
             z-index: 11;
         }
 
@@ -106,7 +118,35 @@
         }
 
         #main {
-           opacity: 1 !important;}
+           opacity: 1 !important
+           width: 100vw;
+           height: 100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        
+        #wrap {
+            margin: 0 !important; 
+            flex-shrink: 0;
+            --scale-w: calc(100vw / 1100);
+            --scale-h: calc(100vh / 680);
+            --scale: min(var(--scale-w), var(--scale-h), 1);
+            
+            transform: scale(var(--scale));
+        }
+        
+        @media (max-width: 600px) {
+            .card {
+                padding: 30px 20px;
+            }
+            .card h1 {
+                font-size: 2.5rem;
+            }
+            .card p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -164,14 +204,13 @@
             const card = document.getElementById('card-20-10');
             const petals = document.getElementById('petals-container');
             const audio = document.getElementById('myAudio');
-            const clickTarget = document; // Bắt sự kiện click trên toàn bộ trang
+            const clickTarget = document; 
 
             function hideOverlayOnClick() {
                 if (card && !card.classList.contains('hidden')) { 
                     card.classList.add('hidden');
                     if (petals) petals.classList.add('hidden');
                     
-                    // Xóa hẳn sau khi mờ (tùy chọn)
                     setTimeout(() => {
                         if (card) card.remove();
                         if (petals) petals.remove();
@@ -184,7 +223,7 @@
                     if (typeof window.startTreeAnimation === 'function') {
                         window.startTreeAnimation().start();
                     }
-
+                 
                     clickTarget.removeEventListener('click', hideOverlayOnClick, { capture: true });
                 }
             }
