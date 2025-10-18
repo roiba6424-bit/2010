@@ -58,7 +58,6 @@
             100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
         }
 
-        /* CĂN GIỮA THIỆP 20/10 */
         .card {
             position: absolute;
             top: 50%;
@@ -76,7 +75,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.3);
             opacity: 1;
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity 0.5s ease-out;
             pointer-events: none;            
             pointer-events: auto;
         }
@@ -102,37 +101,9 @@
             color: #222;
             margin-top: 20px;
         }
-        .cta {            
-            display: inline-block;
-            margin-top: 16px;
-            text-decoration: none;
-            background: rgba(216, 27, 96, 0.95);
-            color: #fff;
-            padding: 10px 18px;
-            border-radius: 28px;
-            font-weight: 600;
-            box-shadow: 0 6px 20px rgba(216,27,96,0.18);
-            transition: transform .12s ease, box-shadow .12s ease;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .cta:active,
-       .cta:focus,
-       .cta:hover { 
-           transform: translateY(-2px); box-shadow: 0 10px 24px rgba(216,27,96,0.22); 
-      }
         #main {
            opacity: 1 !important;
         }
-         @media (max-width: 700px) {
-            .card {
-                padding: 20px 18px;
-                max-width: 92%;
-                transform: translate(-50%, -45%); /* slightly higher on small screens */
-            }
-            .card h1 { font-size: 2.4rem; }
-            .card p { font-size: 1rem; line-height: 1.4; }
-        }
-
     </style>
 </head>
 
@@ -144,9 +115,7 @@
             Nhân ngày Phụ nữ Việt Nam, xin gửi lời chúc tốt đẹp nhất đến một nửa thế giới.
             Chúc các bà, các mẹ, các chị, các em luôn rạng rỡ, hạnh phúc và thành công trong cuộc sống!
         </p>
-        <a href="#" class="cta" id="clickHere">Click Here</a>
         </div>
-     <canvas id="canvas"></canvas>
     <div id="main">
         <div id="wrap">
             <div id="text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">
@@ -204,27 +173,6 @@
             const audio = document.getElementById('myAudio');
         });
     </script>
-<script>
-    (function(){
-        var canvas = document.getElementById('canvas');
-        function resizeCanvas(){
-            var dpr = window.devicePixelRatio || 1;
-            var w = window.innerWidth;
-            var h = window.innerHeight;
-            canvas.style.width = w + 'px';
-            canvas.style.height = h + 'px';
-            canvas.width = Math.floor(w * dpr);
-            canvas.height = Math.floor(h * dpr);
-            var ctx = canvas.getContext('2d');
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        }
-        window.addEventListener('load', resizeCanvas);
-        window.addEventListener('resize', resizeCanvas);
-        document.addEventListener('touchstart', function forwardTouch(){
-            document.dispatchEvent(new Event('click', { bubbles: true }));
-            document.removeEventListener('touchstart', forwardTouch);
-        }, { passive: true });
-    })();
     <script src="./asset/script.js"></script> 
 
 </body>
