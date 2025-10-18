@@ -7,30 +7,36 @@
     
     <title>Chuc mung ngay 20/10</title>
 
-    <link type="text/css" rel="stylesheet" href="./asset/style.css?v=105">
-    <script type="text/javascript" src="./asset/jquery.min.js?v=105"></script>
-    <script type="text/javascript" src="./asset/jscex.min.js?v=105"></script>
-    <script type="text/javascript" src="./asset/jscex-parser.js?v=105"></script>
-    <script type="text/javascript" src="./asset/jscex-jit.js?v=105"></script>
-    <script type="text/javascript" src="./asset/jscex-builderbase.min.js?v=105"></script>
-    <script type="text/javascript" src="./asset/jscex-async.min.js?v=105"></script>
-    <script type="text/javascript" src="./asset/jscex-async-powerpack.min.js?v=105"></script>
-    <script type="text/javascript" src="./asset/functions.js?v=105" charset="utf-8"></script>
-    <script type="text/javascript" src="./asset/love.js?v=105" charset="utf-8"></script>
+    <link type="text/css" rel="stylesheet" href="./asset/style.css?v=106">
+    <script type="text/javascript" src="./asset/jquery.min.js?v=106"></script>
+    <script type="text/javascript" src="./asset/jscex.min.js?v=106"></script>
+    <script type="text/javascript" src="./asset/jscex-parser.js?v=106"></script>
+    <script type="text/javascript" src="./asset/jscex-jit.js?v=106"></script>
+    <script type="text/javascript" src="./asset/jscex-builderbase.min.js?v=106"></script>
+    <script type="text/javascript" src="./asset/jscex-async.min.js?v=106"></script>
+    <script type="text/javascript" src="./asset/jscex-async-powerpack.min.js?v=106"></script>
+    <script type="text/javascript" src="./asset/functions.js?v=106" charset="utf-8"></script>
+    <script type="text/javascript" src="./asset/love.js?v=106" charset="utf-8"></script>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap');
 
         /*
-          THAY ĐỔI: Sửa lại body, cho phép cuộn
+          GIỮ NGUYÊN logic co dãn: 
+          body sẽ "overflow: hidden" và căn giữa #wrap
         */
         body {
             background-image: url('https://images.unsplash.com/photo-1518707664871-0d354d763c3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%D%D&auto=format&fit=crop&w=1770&q=80') !important;
             background-size: cover !important;
             background-position: center center !important;
             font-family: 'Quicksand', sans-serif !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
             margin: 0;
-            /* file style.css gốc đã có "overflow: auto" nên sẽ tự có thanh cuộn */
+            overflow: hidden !important; 
         }
 
         .petals-container {
@@ -108,10 +114,32 @@
             margin-top: 20px;
         }
 
+        #main {
+           opacity: 1 !important;
+           width: 100vw;
+           height: 100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        
         /*
-          THAY ĐỔI: Đã xóa các quy tắc #main và #wrap
-          để cho file style.css gốc tự xử lý
+          GIỮ NGUYÊN logic co dãn (scale)
         */
+        #wrap {
+            width: 1100px !important;
+            height: 680px !important;
+            position: relative !important; 
+            margin: 0 !important; 
+            flex-shrink: 0 !important; 
+
+            --scale-w: calc(100vw / 1100);
+            --scale-h: calc(100vh / 680);
+            --scale: min(var(--scale-w), var(--scale-h), 1);
+            
+            transform: scale(var(--scale)) !important;
+            transform-origin: center center !important; 
+        }
         
         @media (max-width: 600px) {
             .card {
@@ -210,7 +238,7 @@
         });
     </script>
     
-    <script src="./asset/script.js?v=105"></script> 
+    <script src="./asset/script.js?v=106"></script> 
 
 </body>
 </html>
