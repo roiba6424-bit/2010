@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Chuc mung ngay 20/10</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chuc mung ngay 20/10</title>
+
     <link type="text/css" rel="stylesheet" href="./asset/style.css">
     <script type="text/javascript" src="./asset/jquery.min.js"></script>
     <script type="text/javascript" src="./asset/jscex.min.js"></script>
@@ -34,7 +35,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
+            pointer-events: none; 
             overflow: hidden;
             z-index: 10; 
             transition: opacity 0.5s ease-out;
@@ -57,6 +58,7 @@
             100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
         }
 
+
         .card {
             position: absolute;
             top: 50%;
@@ -74,14 +76,16 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.3);
             opacity: 1;
-            transition: opacity 0.5s ease-out;
-            pointer-events: none;            
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
             pointer-events: auto;
+            z-index: 11;
         }
+
         
         .card.hidden {
             opacity: 0;
             transform: translate(-50%, -50%) scale(0.8);
+            pointer-events: none;
         }
         .petals-container.hidden {
             opacity: 0;
@@ -100,9 +104,9 @@
             color: #222;
             margin-top: 20px;
         }
+
         #main {
-           opacity: 1 !important;
-        }
+           opacity: 1 !important;}
     </style>
 </head>
 
@@ -114,9 +118,11 @@
             Nhân ngày Phụ nữ Việt Nam, xin gửi lời chúc tốt đẹp nhất đến một nửa thế giới.
             Chúc các bà, các mẹ, các chị, các em luôn rạng rỡ, hạnh phúc và thành công trong cuộc sống!
         </p>
-        </div>
+        <p style="font-size: 0.9rem; margin-top: 30px; color: #555;">(Nhấp chuột để xem điều bất ngờ)</p>
+    </div>
+        
     <div id="main">
-        <div id="wrap">
+        <div id="wrap"> 
             <div id="text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">
                 <div id="code">
                     <font color="#000"><span class="say">Mừng ngày 20 tháng 10!</span><br>
@@ -133,8 +139,9 @@
         </div>
     </div>
 
-    <audio id="myAudio" autoplay="autoplay" loop>
-        <source src="music/nhac.mp3" type="audio/mp3" /> </audio>
+    <audio id="myAudio" loop>
+        <source src="music/nhac.mp3" type="audio/mp3" />
+    </audio>
 
     <script>
         const petalsContainer = document.getElementById('petals-container');
@@ -156,20 +163,33 @@
         document.addEventListener("DOMContentLoaded", function() {
             const card = document.getElementById('card-20-10');
             const petals = document.getElementById('petals-container');
-            const clickTarget = document; 
+            const audio = document.getElementById('myAudio');
+            const clickTarget = document; // Bắt sự kiện click trên toàn bộ trang
+
             function hideOverlayOnClick() {
                 if (card && !card.classList.contains('hidden')) { 
                     card.classList.add('hidden');
                     if (petals) petals.classList.add('hidden');
+                    
+                    // Xóa hẳn sau khi mờ (tùy chọn)
                     setTimeout(() => {
                         if (card) card.remove();
                         if (petals) petals.remove();
-                    }, 500);
+                    }, 500); 
+
+                    if (audio) {
+                        audio.play().catch(error => console.log("Trình duyệt chặn tự động phát nhạc:", error));
+                    }
+
+                    if (typeof window.startTreeAnimation === 'function') {
+                        window.startTreeAnimation().start();
+                    }
+
                     clickTarget.removeEventListener('click', hideOverlayOnClick, { capture: true });
                 }
             }
+
             clickTarget.addEventListener('click', hideOverlayOnClick, { capture: true, once: true }); 
-            const audio = document.getElementById('myAudio');
         });
     </script>
     <script src="./asset/script.js"></script> 
